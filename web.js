@@ -1,10 +1,11 @@
 var express = require('express');
 var fs = require('fs');
+var f = fs.readFile('index.html');
+
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  var f = fs.readFile('index.html');
   response.send(f);
 
   //response.send('Hello World 2!');
